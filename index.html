@@ -3,200 +3,299 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>International Relationship Connection</title>
 
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f5f9;
-    margin: 0;
-    padding: 20px;
-    color: #222;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5fa;
+  color: #252b40;
+  line-height: 1.6;
+}
+
+header {
+  background: #252b55;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+header h1 {
+  margin: 0 0 10px;
 }
 
 .container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 4px 18px #0001;
+  max-width: 720px;
+  margin: 25px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
 }
 
-h1 {
-    color: #b4235a;
-    text-align: center;
-}
-
-.intro {
-    text-align: center;
-    line-height: 1.6;
-    color: #555;
+h2 {
+  color: #252b55;
+  margin-top: 25px;
+  border-bottom: 1px solid #e5e7ef;
+  padding-bottom: 8px;
 }
 
 label {
-    display: block;
-    margin-top: 17px;
-    font-weight: bold;
+  display: block;
+  font-weight: bold;
+  margin-top: 16px;
 }
 
 input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 7px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #ccd1df;
+  border-radius: 7px;
+  font-size: 16px;
+  background: white;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: normal;
+}
+
+.check input {
+  width: auto;
+  margin-top: 6px;
 }
 
 button {
-    width: 100%;
-    padding: 14px;
-    background: #b4235a;
-    color: white;
-    border: none;
-    border-radius: 7px;
-    margin-top: 24px;
-    font-size: 17px;
-    font-weight: bold;
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  background: #252b55;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
-button:active {
-    background: #861c44;
+button:disabled {
+  opacity: .6;
 }
 
-.small {
-    font-size: 13px;
-    color: #666;
-    margin-top: 15px;
+.note {
+  font-size: 14px;
+  color: #606779;
 }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #606779;
+}
+
 </style>
 </head>
 
 <body>
-<div class="container">
 
-<h1>❤️ International Relationship Connection</h1>
+<header>
+  <h1>International Relationship Connection</h1>
+  <p>Connecting people for meaningful relationships worldwide.</p>
+</header>
 
-<p class="intro">
-Welcome! Please complete this questionnaire so we can
-understand your preferences and help you explore
-compatible international relationships.
+<main class="container">
+
+<h2>Client Registration Form</h2>
+
+<p>
+Complete this form to tell us about yourself and the type
+of international relationship you are looking for.
 </p>
 
-<form action="https://formsubmit.co/YOUR_EMAIL_HERE"
+<p class="note">
+You must be at least 18 years old to apply.
+Submitting this form does not guarantee a match.
+</p>
+
+<form id="relationshipForm"
+action="https://formsubmit.co/glintonkiplangat24@gmail.com"
 method="POST">
 
 <input type="hidden" name="_subject"
-value="New Relationship Client Application">
+value="New International Relationship Application">
 
-<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_template" value="table">
 
-<label>1. Your full name</label>
-<input type="text" name="Full Name"
-placeholder="Enter your full name" required>
+<input type="text" name="_honey"
+style="display:none" tabindex="-1" autocomplete="off">
 
-<label>2. Your age</label>
-<input type="number" name="Age" min="18"
-placeholder="You must be at least 18" required>
+<h2>1. Personal Information</h2>
 
-<label>3. Your country of residence</label>
-<input type="text" name="Country"
-placeholder="e.g. Kenya" required>
+<label for="name">Full Name *</label>
+<input id="name" name="Full Name"
+type="text" required maxlength="100">
 
-<label>4. Your gender</label>
-<select name="Gender" required>
-<option value="">Select your answer</option>
+<label for="email">Email Address *</label>
+<input id="email" name="Client Email Address"
+type="email" placeholder="example@gmail.com"
+required maxlength="254">
+
+<label for="phone">Phone Number with Country Code *</label>
+<input id="phone" name="Phone Number"
+type="tel" placeholder="+254..."
+required maxlength="25">
+
+<label for="age">Age *</label>
+<input id="age" name="Age"
+type="number" min="18" max="120" required>
+
+<label for="country">Country of Residence *</label>
+<input id="country" name="Country of Residence"
+type="text" required maxlength="100">
+
+<label for="gender">Gender *</label>
+<select id="gender" name="Gender" required>
+<option value="">Select an option</option>
 <option>Male</option>
 <option>Female</option>
 <option>Prefer not to say</option>
+<option>Another identity</option>
 </select>
 
-<label>5. What type of relationship are you seeking?</label>
-<select name="Relationship Type" required>
-<option value="">Select relationship type</option>
-<option>Serious relationship</option>
-<option>Long-term partnership</option>
+<h2>2. Relationship Preferences</h2>
+
+<label for="partner">Who would you like to meet? *</label>
+<select id="partner" name="Preferred Partner" required>
+<option value="">Choose an option</option>
+<option>Man</option>
+<option>Woman</option>
+<option>Open to different possibilities</option>
+</select>
+
+<label for="type">What type of relationship do you want? *</label>
+<select id="type" name="Relationship Type" required>
+<option value="">Choose an option</option>
+<option>Long-term relationship</option>
 <option>Marriage</option>
 <option>Friendship first</option>
+<option>Still exploring</option>
 </select>
 
-<label>6. Which country would you prefer your partner to be from?</label>
-<input type="text" name="Preferred Country"
-placeholder="e.g. Canada, USA, UK, Australia">
+<label for="ageRange">Preferred Partner Age Range *</label>
+<input id="ageRange" name="Preferred Age Range"
+type="text" placeholder="e.g. 25–35" required maxlength="30">
 
-<label>7. What age range would you prefer for your partner?</label>
-<input type="text" name="Preferred Age Range"
-placeholder="e.g. 25–35">
+<label for="preferredCountry">Preferred Country or Region *</label>
+<input id="preferredCountry" name="Preferred Country"
+type="text" placeholder="e.g. Canada, Australia, Europe"
+required maxlength="150">
 
-<label>8. What qualities are important to you in a partner?</label>
-<textarea name="Partner Qualities" rows="4"
-placeholder="e.g. honesty, kindness, loyalty"
-required></textarea>
-
-<label>9. What are your main interests and hobbies?</label>
-<textarea name="Interests" rows="3"
-placeholder="Tell us about your interests"></textarea>
-
-<label>10. Are you currently single?</label>
-<select name="Relationship Status" required>
-<option value="">Select your answer</option>
+<label for="marital">Current Marital Status *</label>
+<select id="marital" name="Marital Status" required>
+<option value="">Choose an option</option>
 <option>Single</option>
 <option>Divorced</option>
 <option>Widowed</option>
+<option>Separated</option>
 </select>
 
-<label>11. Are you open to a long-distance relationship?</label>
-<select name="Long Distance" required>
-<option value="">Select your answer</option>
-<option>Yes</option>
-<option>No</option>
-<option>Maybe</option>
-</select>
+<h2>3. Lifestyle and Compatibility</h2>
 
-<label>12. What is your preferred way to communicate?</label>
-<select name="Communication Method" required>
-<option value="">Choose a method</option>
-<option>WhatsApp</option>
-<option>Email</option>
-<option>Phone call</option>
-<option>Video call</option>
-</select>
+<label for="occupation">Occupation *</label>
+<input id="occupation" name="Occupation"
+type="text" required maxlength="150">
 
-<label>13. glintonkiplangat24@gmail.com<\label>
-<input type="email" name="Email"
-placeholder="Enter your email address" required>
+<label for="interests">Hobbies and Interests *</label>
+<textarea id="interests" name="Hobbies and Interests"
+required maxlength="1500"></textarea>
 
-<label>14. Your contact number (optional)</label>
-<input type="tel" name="Phone"
-placeholder="Include your country code">
+<label for="qualities">Qualities You Want in a Partner *</label>
+<textarea id="qualities" name="Desired Partner Qualities"
+required maxlength="1500"></textarea>
 
-<label>15. Anything else we should know?</label>
-<textarea name="Additional Information" rows="4"
-placeholder="Share any other preferences"></textarea>
+<label for="languages">Languages You Speak</label>
+<input id="languages" name="Languages"
+type="text" maxlength="200">
 
-<label>
-<input type="checkbox" name="Consent"
-value="Agreed" required style="width:auto">
-I agree to be contacted about relationship matching
-and understand that my information will be handled
-according to the privacy policy.
+<label for="extra">Additional Information</label>
+<textarea id="extra" name="Additional Information"
+maxlength="1500"></textarea>
+
+<h2>4. Consent and Privacy</h2>
+
+<label class="check">
+<input type="checkbox" name="Contact Consent"
+value="Yes" required>
+<span>I agree to be contacted about my relationship preferences.</span>
 </label>
 
-<button type="submit">Submit My Application</button>
+<label class="check">
+<input type="checkbox" name="Privacy Consent"
+value="Yes" required>
+<span>I understand how my information will be used to process my application. My information should only be shared with potential matches with my permission.</span>
+</label>
 
-<p class="small">
-For adults aged 18 and above. Submitting this form
-does not guarantee a match. Never send money to
-someone you have not verified.
+<p class="note">
+Do not enter passwords, bank details, or other sensitive
+information in this form.
 </p>
 
+<button id="submitButton" type="submit">
+Submit Application
+</button>
+
+<p id="status" role="status" aria-live="polite"></p>
+
 </form>
-</div>
+</main>
+
+<footer>
+International Relationship Connection
+</footer>
+
+<script>
+const form = document.getElementById("relationshipForm");
+const email = document.getElementById("email");
+const button = document.getElementById("submitButton");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", function(event) {
+
+  if (!form.checkValidity()) {
+    event.preventDefault();
+    form.reportValidity();
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email.value.trim())) {
+    event.preventDefault();
+    email.setCustomValidity(
+      "Enter a valid email address, for example name@gmail.com."
+    );
+    email.reportValidity();
+    email.setCustomValidity("");
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = "Submitting...";
+  status.textContent = "Sending your application...";
+});
+</script>
+
 </body>
-  </html>
+    </html>
